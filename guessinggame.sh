@@ -14,9 +14,9 @@ while [[ $guess -ne $correct ]]
 do
 	if [[ $guess -gt $correct ]]
 	then
-		echo "Sorry, your guess was too high..."
+		echo "Too High"
 	else 
-		echo "Sorry, your guess was too low..."
+		echo "Too Low"
 	fi
 	echo
 	echo "Guess again: "
