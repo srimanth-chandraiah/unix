@@ -6,4 +6,4 @@ README.md:
 	echo '* There were $(shell wc -l < guessinggame.sh) lines in guessinggame.sh' >> README.md
 
 clean:
-	rm README.md
+	
