@@ -7,9 +7,9 @@
 
 function getfc(){
     local file_count=`ls -l | wc -l`
-    #file_count="$((file_count-1))"
+    #file_count="$((file_count))"
     echo $file_count
- return "$((file_count - 1))"
+ return "$((file_count ))"
 }
 
 clear
