@@ -8,7 +8,6 @@
 function getfc(){
     local file_count=`ls -1A | wc -l`
     echo $file_count
-    #return "$((file_count ))"
 }
 
 clear
