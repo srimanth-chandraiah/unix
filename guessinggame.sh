@@ -1,15 +1,14 @@
 #! usr/bin/bash
-  
+
 # File: guessinggame.sh
 # Author: Srimanth Chandraiah
 # This scrpt prompts the user to guess the number of files in the current directory. If the number guessed is too high or too low,
 # the script continues to prompt till the user guesses the right number of files in the current directory
 
 function getfc(){
-    local file_count=`ls -l | wc -l`
-    #file_count="$((file_count))"
+    local file_count=`ls -1A | wc -l`
     echo $file_count
- return "$((file_count ))"
+    #return "$((file_count ))"
 }
 
 clear
@@ -21,6 +20,10 @@ while true; do
     read number
     echo 'You guessed' $number
 
+    if [[ $((number)) != $number ]]; then
+        echo "Please enter a valid number!"
+        continue
+    fi
     if [ "$number" -lt "$fileCount" ]
     then
         echo -e "Your guess was too Low, Try Again"
@@ -28,7 +31,7 @@ while true; do
     then
         echo -e "Your guess was too high, Try again"
     else
-       echo -e "Congrats! You guessed the amount of files in the current directory"
+       echo -e "Congrats! You guessed the correct number  of files in the current directory"
        break;
     fi
 done
